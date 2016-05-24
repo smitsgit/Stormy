@@ -1,0 +1,174 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+                tools:context=".MainActivity"
+    android:background="@drawable/test"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:id="@+id/TempView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="150sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/degreeView"
+        android:layout_alignTop="@+id/TempView"
+        android:layout_toRightOf="@+id/TempView"
+        android:layout_toEndOf="@+id/TempView"
+        android:src="@drawable/degree"
+        android:paddingTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="At 5:18 AM it will be"
+        android:id="@+id/timeView"
+        android:layout_above="@+id/TempView"
+        android:layout_centerHorizontal="true"
+        android:textColor="#80ffffff"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cleavland, OH"
+        android:id="@+id/locationlabel"
+        android:layout_above="@+id/timeView"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffffff"
+        android:textSize="20sp"
+        android:layout_marginBottom="40dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weathericon"
+        android:layout_alignBottom="@+id/locationlabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/cloudy"
+        android:layout_alignTop="@+id/locationlabel"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TempView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:id="@+id/linearLayout">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HUMIDITY"
+                android:id="@+id/humiditylable"
+                android:textColor="#ffffffff"
+                android:textSize="15sp"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.88"
+                android:id="@+id/humidityval"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:textSize="24sp"
+                android:textColor="#ffffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="PRECIPITATION"
+                android:id="@+id/preciView"
+                android:textSize="15sp"
+                android:textColor="#ffffffff"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="70%"
+                android:id="@+id/preciVal"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_horizontal"
+                android:textSize="24sp"
+                android:textColor="#ffffffff" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="stormy with chance of gulan jamun"
+        android:id="@+id/summaryView"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textColor="#ffffffff"
+        android:gravity="center_horizontal"
+        android:textSize="18sp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ibutton"
+        android:layout_above="@+id/locationlabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/refresh"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progbarspin"
+        android:layout_alignTop="@+id/ibutton"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/ibutton"
+        android:visibility="invisible"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Get Hourly Data"
+            android:id="@+id/hourbutton"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Get Daily Data"
+            android:id="@+id/dailybutton"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</RelativeLayout>
